@@ -16,16 +16,23 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Prerequisites
 
-What things you need to install the software and how to install them.
+VS Code
 
 ```
 Examples
 ```
 
-## Deployment
 
-Add additional notes about how to deploy this on a production system.
+## Branch Naming
 
-## Resources
+To be created for a feature that has an Epic associated with it:
+```
+proj-<kebab-case-description>/base
+```
 
-Add links to external resources for this project, such as CI server, bug tracker, etc.
+To be created for features (Stories, Tasks, etc.) that are to be merged into base branch:
+```
+feature-<ISSUE-ID>-<kebab-case-description>
+```
+
+Feature branches will be merged into project base branches, which will be merged into ```main``` branch when complete. 

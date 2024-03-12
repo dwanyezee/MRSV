@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import Settings from "./Settings"
 
 function App() {
 
@@ -18,14 +19,15 @@ function App() {
   return (
     <div>
       
-      {(typeof data.users === "undefined") ? (
+      {/* {(typeof data.users === "undefined") ? (
         <p>Loading...</p>
       ) : (
         data.users.map((user, i) => (
           <p key={i}> {user}</p>
         ))
-      )}
+      )} */}
 
+      <Settings />
     </div>
   )
 }

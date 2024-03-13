@@ -1,9 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+/* Switch styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 78px;
+    height: 40px;
+    margin-top: 10px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000;
+    -webkit-transition: .4s;
+    transition: .4s;
+    z-index: 0;
+  }
+  
+  .slider:before {
+    position: absolute;
+    cursor: pointer;
+    content: "";
+    height: 34px;
+    width: 34px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #F5F5F1;
+    -webkit-transition: .4s;
+    transition: .4s;
+    z-index: 2;
+  }
+
+  input:checked + .slider {
+    background-color: #00BB72;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #00BB72;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(39px);
+    -ms-transform: translateX(39px);
+    transform: translateX(39px);
+  }
+
+  .switch-off {
+    position: absolute;
+    cursor: pointer;
+    top: 11px;
+    left: 43px;
+    font-size: 12px;
+    z-index: 1;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .switch-on {
+    position: absolute;
+    cursor: pointer;
+    top: 11px;
+    left: 14px;
+    font-size: 12px;
+    z-index: 1;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* (cont.) Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* button styles */
+button {
+    border-radius: 8px;
+    border: 0;
+}
+
+.green-btn {
+    margin: 4px;
+    padding: 15px 25px 15px 25px;
+    background-color: #00BB72;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.red-btn {
+    margin: 4px;
+    padding: 15px 25px 15px 25px;
+    background-color: #FE2C5F;
+    font-size: medium;
+    font-weight: bold;
+}
+
 /* base styles */
 * {
     margin: 0;
-    font-family: "Archivo";
+    font-family: "Open Sans";
     color:#f5f5f1;
 }
 
@@ -11,9 +122,27 @@ html {
     background-color: #2C2D30;
 }
 
+h2 {
+    font-weight: 300;
+    font-size: small;
+}
+
+p {
+    font-weight: bold;
+    font-size: large;
+}
+
+.settings {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
 .mainpanel {
     height: 100%;
-    width: 500px;
+    width: 40%;
     position: fixed;
     top: 0;
     left: 0;
@@ -21,42 +150,30 @@ html {
     display: block;
 }
 
-.mainpanel h2 {
-    font-family: "Open Sans";
-    font-weight: 300;
-    font-size: medium;
-}
-
-.mainpanel p {
-    font-family: "Open Sans";
-    font-weight: bold;
-    font-size: large;
-}
-
 .mainpanel select {
     width: 100%;
     padding: 6px 10px;
-    margin: 10px 0;
+    margin: 5px 0;
     box-sizing: border-box;
     display: block;
     background-color: #2C2D30;
     border-radius: 8px;
     border: 0;
-    font-family: "Open Sans";
     font-weight: bold;
     font-size: large;
 }
 
 .mainpanel .elements div{
-    padding: 30px;
+    padding: 15px 30px 15px 30px;
 }
 
-.mainpanel .elements .title{
+.mainpanel .elements .title {
     display: flex;
     align-items: center;
     margin: 0 auto;
 }
-.mainpanel .elements .title img{
+
+.mainpanel .elements .title img {
     margin-left: auto;
 }
 
@@ -66,33 +183,21 @@ html {
     background-color: #2C2D30;
     font-size: 30px;
     color:#f5f5f1;
-    border-radius: 8px;
-    border: 0;
 }
 
 .mainpanel .elements .title button:active{
     background-color: darkgrey;
 }
 
-.mainpanel .profiles li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 150px;
-}
-
-.mainpanel .profiles ul {
-    padding: 0;
-    list-style: none;
-    list-style-type: inside;
-}
-
 .mainpanel .profile-content {
     display: flex;
     align-items: center;
-    height: 100px;
-    width: 400px;
+    height: 90px;
+    width: 90%;
+}
+
+.mainpanel .profile-content:hover {
+    background-color: #2C2D30;
 }
 
 .mainpanel .profile-content p {
@@ -104,3 +209,59 @@ html {
     border-radius: 50%;
 }
 
+.mainpanel .profile-content button {
+    margin-left: auto;
+}
+
+.mainpanel .profile-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainpanel .profile-add button {
+    position: absolute;
+    bottom: 20px;
+    width: 90%;
+    background-color: #00BB72;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.secondarypanel {
+    position: fixed;
+    top: 0;
+    left: 40%;
+    margin: 50px;
+}
+
+.secondarypanel .elements div{
+    padding: 15px 30px 15px 30px;
+    margin-top: 30px;
+}
+
+.secondarypanel .profile-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondarypanel .profile-display img {
+    width: 35%;
+    border-radius: 50%;
+}
+
+.secondarypanel .profile-display p {
+    font-size: xx-large;
+}
+
+.secondarypanel .profile-name {
+    margin-left: 40px;
+}
+
+.secondarypanel .description-text {
+    font-weight: 300;
+    font-size: larger;
+    line-height: 1.6;
+    color: #6b6c6e;
+}

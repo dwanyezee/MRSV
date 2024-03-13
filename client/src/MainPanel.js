@@ -1,10 +1,12 @@
-const MainPanel = () => {
+const MainPanel = (props) => {
+    const profiles = props.profiles
+
     return ( 
         <div className="mainpanel">
             <div className="elements">
                 <div className="title">
                     <button>🡠</button>
-                    <img src="Images/MRSV_Logo.svg" />
+                    <img src="Images/MRSV_Logo.svg" alt="logo" />
                 </div>
                 <div className="network">
                     <h2>Network Connection</h2>
@@ -19,29 +21,16 @@ const MainPanel = () => {
                 </div>
                 <div className="profiles">
                     <h2>profile</h2>
-                    <ul>
-                        <li>
-                            <div className="profile-content">
-                                <img src="https://picsum.photos/200?random=1" />
-                                <p>Toy'R'Us</p>
-                            </div>
+                    {profiles.map((profile) => (
+                        <div className="profile-content" key={ profile.id } onClick={() => props.GetProfile(profile.id) }>
+                            <img src={ profile.imageLink }  alt= {`${profile.name}'s Profile`} />
+                            <p>{ profile.name }</p>
                             <button>...</button>
-                        </li>
-                        <li>
-                            <div className="profile-content">
-                                <img src="https://picsum.photos/200?random=2" />
-                                <p>Nintendo</p>
-                            </div>
-                            <button>...</button>
-                        </li>
-                        <li>
-                            <div className="profile-content">
-                                <img src="https://picsum.photos/200?random=3" />
-                                <p>Cool Japan</p>
-                            </div>
-                            <button>...</button>
-                        </li>
-                    </ul>
+                        </div>
+                    ))}
+                </div>
+                <div className="profile-add">
+                    <button>Add Profile</button>
                 </div>
             </div>
         </div>

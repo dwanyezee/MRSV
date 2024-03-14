@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import Settings from "./Settings"
+import Homepage from "./Homepage"
 
 function App() {
 
@@ -27,7 +28,8 @@ function App() {
         ))
       )} */}
 
-      <Settings />
+      {/* <Settings /> */}
+      <Homepage />
     </div>
   )
 }

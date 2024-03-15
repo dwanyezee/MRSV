@@ -18,8 +18,8 @@ const Homepage = () => {
                 <img src="https://picsum.photos/200?random=1121242" alt="" />
             </div>
             <div className="masthead"> 
-                <div className="colorgradient">
-                    <img src="Images/Masthead_Background.png" alt=""></img>
+                <div className="masthead-image-display colorgradient">
+                    <img className="" src="Images/Masthead_Background.png" alt=""></img>
                 </div>
                 <div className="masthead-content-creator-display">
                     <img src="https://picsum.photos/200?random=11242" alt="" />

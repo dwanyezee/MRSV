@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Settings from "./Settings"
 import Homepage from "./Homepage"
+import Preview  from "./Preview"
 
 function App() {
 
@@ -18,19 +20,15 @@ function App() {
   }, [])
 
   return (
-    <div>
-      
-      {/* {(typeof data.users === "undefined") ? (
-        <p>Loading...</p>
-      ) : (
-        data.users.map((user, i) => (
-          <p key={i}> {user}</p>
-        ))
-      )} */}
-
-      {/* <Settings /> */}
-      <Homepage />
-    </div>
+    <Router>
+      <div className="app">
+        <Routes>
+          <Route exact path="/" element={<Homepage />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/preview" element={<Preview />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 

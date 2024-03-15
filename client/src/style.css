@@ -91,6 +91,8 @@
 
 /* button styles */
 button {
+    border: none;
+    cursor: pointer;
     border-radius: 8px;
     border: 0;
 }
@@ -120,6 +122,15 @@ button {
     color: #000000;
 }
 
+.heart {
+    appearance: none;
+    background-color: inherit;
+}
+
+.heart img {
+    width: 40px;
+}
+
 /* base styles */
 * {
     margin: 0;
@@ -142,6 +153,7 @@ p {
 }
 
 /* Homepage */
+
 .colorgradient {
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
@@ -166,6 +178,12 @@ p {
 
 .masthead {
     position: relative;
+}
+
+.masthead-image-display img {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
 }
 
 .masthead-content {
@@ -276,6 +294,136 @@ p {
     position: relative;
     left: 65%;
 }
+
+/* Preview Page */
+
+.preview-cover {
+    position: relative;
+}
+
+.preview-cover-background {
+    width: 100%;
+    min-height: 300px;
+    object-fit: cover;
+}
+
+.preview-cover .preview-cover-container {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.preview-tag {
+    padding: 40px;
+    margin-top: -4px;
+    background-color: #0c232e;
+}
+
+.preview-tag .preview-tag-content {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.preview-tag .preview-tag-content > * {
+    font-size: smaller;
+}
+
+.preview-tag .preview-tag-description {
+    margin-bottom: 40px;
+}
+
+.preview-tag .preview-tag-description p {
+    font-weight: 300;
+}
+
+/* Playlist */
+
+.playlist {
+    background-color: #000000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 0 40px 0;
+}
+
+.playlist-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 75%;
+}
+
+.playlist-card h1 {
+    font-size: large;
+}
+
+.playlist-card h3 {
+    font-size: medium;
+}
+
+.playlist-card-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.playlist-card .playlist-card-thumbnail {
+    width: 137px;
+    height: 111px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.playlist-card .playlist-card-content {
+    display: block;
+    width: 210px;
+}
+
+.playlist-card .playlist-card-content-name {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.playlist-card .playlist-card-content-name img {
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.playlist-card .playlist-card-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 35%;
+}
+
+.playlist-card .playlist-card-btns-likes {
+    display: flex;
+    justify-content: space-between;
+    min-width: 100px;
+}
+
+.playlist-card .playlist-card-btns-likes img {
+    display: flex;
+    margin-left: 10px;
+    
+}
+
+.playlist-card .playlist-card-btns-others {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+}
+
 /* Settings Menu */
 
 .settings {

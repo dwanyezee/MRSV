@@ -302,9 +302,15 @@ p {
 }
 
 .preview-cover-background {
+    position: relative;
     width: 100%;
     min-height: 300px;
     object-fit: cover;
+}
+
+.blur {
+    filter: blur(8px) brightness(50%);
+    -webkit-filter: blur(8px) brightness(50%);
 }
 
 .preview-cover .preview-cover-container {
@@ -422,6 +428,38 @@ p {
     display: flex;
     justify-content: space-between;
     width: 100px;
+}
+
+/* Controller Menu */
+
+.controller-main-name {
+    position: absolute;
+    top: 80px;
+    left: 100px;
+}
+
+.controller-main-content {
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+    width: 65%;
+}
+
+.controller-panel {
+    position: absolute;
+    top: 200px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.controller-panel-btn {
+    padding: 50px;
+    margin: 0 5px 0 5px; 
+    background-color: #252629;
+    filter: opacity(60%);
+    -webkit-filter: opacity(60%);
 }
 
 /* Settings Menu */

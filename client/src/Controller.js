@@ -1,4 +1,5 @@
 import Playlist from "./Playlist";
+import Slider from "./slider";
 
 const Controller = () => {
     return ( 
@@ -20,6 +21,10 @@ const Controller = () => {
                     <button className="controller-panel-btn">a</button>
                     <button className="controller-panel-btn">a</button>
                     <button className="controller-panel-btn">a</button>
+                    <Slider colors={"yellow"} />
+                    <Slider colors={"white"} />
+                    <Slider colors={"blue"} />
+                    <Slider colors={"green"} />
                 </div>
             </div>
             <div className="controller-playlist">

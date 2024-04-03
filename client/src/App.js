@@ -4,6 +4,7 @@ import Settings from "./Settings"
 import Homepage from "./Homepage"
 import Preview  from "./Preview"
 import Controller from "./Controller"
+import Navbar from "./Navbar"
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
   return (
     <Router>
       <div className="app">
+        <Navbar />
         <Routes>
           <Route exact path="/" element={<Homepage />} />
           <Route path="/settings" element={<Settings />} />

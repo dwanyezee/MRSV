@@ -101,9 +101,6 @@ input:checked + .slider:before {
     opacity: 0;
     width: 0;
     height: 0;
-}
-
-.switch-2 input {
     position: absolute;
     z-index: 1;
 }
@@ -194,11 +191,47 @@ button {
 
 .heart {
     appearance: none;
+    cursor: pointer;
     background-color: inherit;
+    position: relative;
+}
+
+.heart input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
 }
 
 .heart img {
-    width: 40px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.heart-select {
+    transform: scale(0);
+    z-index: -1;
+    transition: .2s;
+    transition-timing-function: cubic-bezier(0,2.2,1,2.2);
+}
+
+.heart-unselect {
+    transform: scale(1);
+    transition: .2s;
+}
+
+input:hover ~ .heart-unselect {
+    filter: brightness(80%);
+}
+
+input:checked ~ .heart-select {
+    transform: scale(1);
+    z-index: 1;
+}
+
+input:checked ~ .heart-unselect {
+    transform: scale(0);
 }
 
 /* Control slider styles */
@@ -287,6 +320,7 @@ button {
     margin: 0;
     font-family: "Open Sans";
     color:#f5f5f1;
+    user-select: text;
 }
 
 html {
@@ -311,6 +345,44 @@ p {
     display: grid;
     justify-content: space-evenly;
     align-items: center;
+}
+
+/* Navbar page */
+.navbar-button {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 5;
+    top: 25px;
+    left: 15px;
+    background-color: #2C2D30;
+    color: #f5f5f1;
+    font-size: 25px;
+}
+
+.navbar-logo {
+    position: absolute;
+    background: none;
+    left: 50%;
+    top: 40px;
+    z-index: 5;
+}
+
+.navbar-profile {
+    position: absolute;
+    background: none;
+    right: 15px;
+    top: 25px;
+    width: 70px;    
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.navbar-profile img {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 /* Homepage */

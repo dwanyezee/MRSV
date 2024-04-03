@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import Playlist from "./Playlist";
+import Heart from "./Heart";
 
 const Preview = () => {
     return ( 
@@ -6,8 +8,8 @@ const Preview = () => {
             <div className="preview-cover">
                 <img className="preview-cover-background" src="https://picsum.photos/1500/500" alt="" />
                 <div className="preview-cover-container">
-                    <button className="green-btn">Launch</button>
-                    <button className="heart" type="submit"><img src="/Icons/Favorite_Icon.svg" alt="" /></button>
+                    <Link to="/controller"><button className="green-btn">Launch</button></Link>
+                    <Heart size="50px" />
                 </div>
             </div>
             <div className="preview-tag">

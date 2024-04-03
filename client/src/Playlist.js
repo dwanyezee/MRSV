@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Heart from "./Heart";
 
 const Playlist = () => {
     const [playlists, setPlaylists] = useState([
@@ -30,7 +31,7 @@ const Playlist = () => {
                 <div className="playlist-card-btns">
                     <div className="playlist-card-btns-likes">
                         <h4>{ playlist.likes }</h4>
-                        <img src="/Icons/FavoriteSelected_Icon.svg" alt="" />
+                        <Heart size="40px" />
                     </div>
                     <div className="playlist-card-btns-others">
                         <img src="/Icons/PlaylistAdd_Icon.svg" alt="" />

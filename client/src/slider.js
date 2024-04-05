@@ -40,6 +40,7 @@ const Slider = (props) => {
         step={step}
         orientation="vertical"
         valueLabelDisplay="auto"
+        onChange={typeof props.sliderValue !== "undefined" ? (value) => props.sliderValue((max ? max : 100) - value - (min ? min : 0)) : null}
         />
      );
 }

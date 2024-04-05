@@ -2,8 +2,20 @@ import Checkbox from "./Checkbox";
 import Playlist from "./Playlist";
 import Slider from "./slider";
 import Joystick from "./Joystick";
+import mrsvSocket from "./SocketConnection";
+import { useEffect } from "react";
 
 const Controller = () => {
+    function getData(val) {
+        console.log(val);
+    }
+
+    var socketControls = new mrsvSocket();
+
+    // useEffect(() => {
+    //     socketControls.Initialize();
+    // }, []);
+
     return ( 
         <div className="Controller">
             <div className="controller-main">
@@ -19,7 +31,7 @@ const Controller = () => {
                     <div className="controller-panel-sliders flex">
                         <div className="sliders-volume">
                             <img className="sliders-icon" src="/Icons/Volume_Icon.svg" alt="" />
-                            <Slider colors={"green"} hasMarks={false}/>
+                            <Slider colors={"green"} hasMarks={false} sliderValue={getData}/>
                         </div>
                         <div className="sliders-weather">
                             <div className="flex">
@@ -28,13 +40,13 @@ const Controller = () => {
                                 <div>_____________</div>
                             </div>
                             <div className="flex">
-                                <Slider colors={"blue"} markColors={"white"} hasMarks={true} min={0} max={4} step={1}/>
-                                <Slider colors={"white"} hasMarks={false} />
+                                <Slider colors={"blue"} markColors={"white"} hasMarks={true} min={0} max={4} step={1} sliderValue={getData}/>
+                                <Slider colors={"white"} hasMarks={false} sliderValue={getData} />
                             </div>
                         </div>
                         <div className="sliders-time">
                             <img className="sliders-icon" src="/Icons/Time_Icon.svg" alt="" />
-                            <Slider colors={"yellow"} markColors={"black"} hasMarks={true} min={0} max={3} step={1} />
+                            <Slider colors={"yellow"} markColors={"black"} hasMarks={true} min={0} max={3} step={1} sliderValue={getData} />
                         </div>
                     </div>
                     <div className="controller-panel-view">
@@ -61,5 +73,5 @@ const Controller = () => {
         </div>
      );
 }
- 
+
 export default Controller;

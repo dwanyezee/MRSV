@@ -12,7 +12,8 @@ const Homepage = () => {
         { imageLink: 'https://picsum.photos/200?random=6', name: "Toy'R'Us", type: "Toys/Games", id: 6},
         { imageLink: 'https://picsum.photos/200?random=7', name: "Toy'R'Us", type: "Toys/Games", id: 7},
     ])
-    
+
+
     return ( 
         <div className="homepage">
             <div className="masthead"> 

@@ -6,7 +6,7 @@ export default class mrsvSocket {
 
     Initialize() {
         // sending a connect request to the server.
-        socket = io.connect('http://192.168.156.124:5000');
+        socket = io.connect('http://192.168.0.100:5000');
 
         socket.on('connect', function(msg) {
             console.log('After connect', msg);

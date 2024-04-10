@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Heart from "./Heart";
+import AdditionalOptions from "./AdditionalOptions";
+import PlaylistOptions from "./PlaylistOptions";
 
 const Playlist = () => {
     const [playlists, setPlaylists] = useState([
@@ -13,9 +15,11 @@ const Playlist = () => {
         { imageThumbnailLink: "https://picsum.photos/200?random=8", playlistName: "Emerald Range", type: "Toys/Games", authorName: "Pokemon Company", likes: 3235, id: 8 },
     ])
 
+    const [optionActiveIndex, setOptionActiveIndex] = useState(0);
+
     return ( 
     <div className="playlist">
-        {playlists.map((playlist) => (
+        {playlists.map((playlist, currentIndex) => (
             <div className="playlist-card" key={ playlist.id }>
                 <div className="playlist-card-details">
                     <img className="playlist-card-thumbnail" src={ playlist.imageThumbnailLink } alt="" />
@@ -34,8 +38,8 @@ const Playlist = () => {
                         <Heart size="40px" />
                     </div>
                     <div className="playlist-card-btns-others">
-                        <img src="/Icons/PlaylistAdd_Icon.svg" alt="" />
-                        <img src="/Icons/Options_Icon.svg" alt="" />
+                        <PlaylistOptions showOptions={() => setOptionActiveIndex( optionActiveIndex === (currentIndex + 1) ? 0 : currentIndex + 1 )} isActive={optionActiveIndex === currentIndex + 1} />
+                        <AdditionalOptions showOptions={() => setOptionActiveIndex( optionActiveIndex === (-currentIndex - 1) ? 0 : -currentIndex - 1 )} isActive={optionActiveIndex === -currentIndex - 1} />
                     </div>
                 </div>        
             </div>

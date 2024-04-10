@@ -34,7 +34,7 @@ const Homepage = () => {
             <div className="library">
                 <h2 className="library-title">Welcome&nbsp;<strong>{ profileName }</strong>&nbsp;to your MRSV.SPACE demonstration. Please select an experience.</h2>
                 <div className="library-list">
-                    <p>Experience Library</p>
+                    <h1>Experience Library</h1>
                     <div className="library-cardlist">
                         {environments.map((environment) => (
                             <div className="card" key={ environment.id }>

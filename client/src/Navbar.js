@@ -1,17 +1,21 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 
 const Navbar = () => {
     let location = useLocation();
+    const navigate = useNavigate();
+
+    function ReturnMenu()
+    {
+        navigate(-1);
+    }
 
     return ( 
     <div className="navbar">
         {location.pathname === "/" ? null :
-        <Link to="/">
-            <button className="navbar-button">
+            <button className="navbar-button" onClick={ReturnMenu}>
                 🡠
             </button>
-        </Link>
         }
         <Link to="/">
             <button className="navbar-logo">

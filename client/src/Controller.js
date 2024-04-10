@@ -10,7 +10,7 @@ const Controller = () => {
         console.log(val);
     }
 
-    var socketControls = new mrsvSocket();
+    /* var socketControls = new mrsvSocket(); */
 
     // useEffect(() => {
     //     socketControls.Initialize();
@@ -40,13 +40,13 @@ const Controller = () => {
                                 <div>_____________</div>
                             </div>
                             <div className="flex">
-                                <Slider colors={"blue"} markColors={"white"} hasMarks={true} min={0} max={4} step={1} sliderValue={getData}/>
-                                <Slider colors={"white"} hasMarks={false} sliderValue={getData} />
+                                <Slider colors={"blue"} markColors={"white"} hasMarks={true} min={0} max={4} step={1} /* sliderValue={socketControls.SetWeatherType} *//>
+                                <Slider colors={"white"} hasMarks={false} /* sliderValue={socketControls.SetWeatherIntensity} */ />
                             </div>
                         </div>
                         <div className="sliders-time">
                             <img className="sliders-icon" src="/Icons/Time_Icon.svg" alt="" />
-                            <Slider colors={"yellow"} markColors={"black"} hasMarks={true} min={0} max={3} step={1} sliderValue={getData} />
+                            <Slider colors={"yellow"} markColors={"black"} hasMarks={true} min={0} max={3} step={1} /* sliderValue={socketControls.SetTimeOfDay} */ />
                         </div>
                     </div>
                     <div className="controller-panel-view">

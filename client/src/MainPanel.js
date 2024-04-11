@@ -5,7 +5,6 @@ const MainPanel = (props) => {
         <div className="mainpanel">
             <div className="elements">
                 <div className="title">
-                    <button>🡠</button>
                     <img src="Images/MRSV_Logo.svg" alt="logo" />
                 </div>
                 <div className="network">

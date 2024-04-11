@@ -10,17 +10,6 @@ function App() {
 
   const [data, setData] = useState([{}])
 
-  // useEffect(() => {
-  //   fetch("/settings").then(
-  //     res => res.json()
-  //   ).then(
-  //     data => {
-  //       setData(data)
-  //       console.log(data)
-  //     }
-  //   )
-  // }, [])
-
   return (
     <Router>
       <div className="app">
@@ -28,7 +17,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Homepage />} />
           <Route path="/settings" element={<Settings />} />
-          <Route path="/preview" element={<Preview />} />
+          <Route path="/preview/:id" element={<Preview />} />
           <Route path="/controller" element={<Controller />} />
         </Routes>
       </div>

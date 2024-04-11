@@ -1,0 +1,181 @@
+{
+    "environments" : [
+        {
+            "name": "environment_name",
+            "version": "1.0.0",
+            "description": "A detailed description of the environment.",
+            "preview_image": "/Images/CountrysideBarnyard.png",
+            "author": "author_name",
+            "id": "env-1",
+            "tag": "environment_tag",
+            "categories": [
+                {"id": "cat-10000", "title": "Forests", "description": "Fundamental aspects of the environment."},
+                {"id": "cat-10001", "title": "Boreal", "description": "The Arctic forests offer a serene beauty found nowhere else."},
+                {"id": "cat-10002", "title": "Peaceful", "description": "Designed for relaxation."},
+                {"id": "cat-10003", "title": "Soundscapes", "description": "Incorporating sound for a more immersive experience."}
+            ],
+            "interactions": [
+                {"id": "int-0000", "interaction_name": "Time of Day", "interaction_var_type": "float", "interaction_control_type": "slider", "interaction_min_value": 0.0, "interaction_max_value": 24.0, "interaction_default_value": 12.0},
+                {"id": "int-0001", "interaction_name": "Enable Fog", "interaction_var_type": "bool", "interaction_control_type": "toggle", "interaction_default_value": false},
+                {"id": "int-0002", "interaction_name": "Weather Type", "interaction_var_type": "enum", "interaction_control_type": "drop_down", "interaction_options": [
+                    {"id": "opt-01", "name": "Clear"},
+                    {"id": "opt-02", "name": "Rainy"},
+                    {"id": "opt-03", "name": "Stormy"},
+                    {"id": "opt-04", "name": "Snowing"}
+                ], "interaction_default_value": "opt-01"}
+            ]
+        },
+        {
+            "name": "MoonBase Alpha",
+            "version": "1.2.0",
+            "description": "A realistic lunar environment simulation, complete with regolith and low gravity.",
+            "preview_image": "/Images/DesertSandDunes.png",
+            "author": "LunarResearchCorp",
+            "id": "env-2",
+            "tag": "Film/TV",
+            "categories": [
+                {"id": "cat-20000", "title": "Lunar Surface", "description": "Explore the dusty plains and craters."},
+                {"id": "cat-20001", "title": "Low Gravity", "description": "Experience the thrill of low gravity."},
+                {"id": "cat-20002", "title": "Lunar Night", "description": "Survive the extreme temperatures of the lunar night."}
+            ],
+            "interactions": [
+                {"id": "int-1000", "interaction_name": "Time of Lunar Day", "interaction_var_type": "float", "interaction_control_type": "slider", "interaction_min_value": 0.0, "interaction_max_value": 708.7, "interaction_default_value": 354.35},
+                {"id": "int-1001", "interaction_name": "Lunar Phenomena", "interaction_var_type": "enum", "interaction_control_type": "drop_down", "interaction_options": [
+                    {"id": "opt-100", "name": "Solar Eclipse"},
+                    {"id": "opt-101", "name": "Meteor Shower"},
+                    {"id": "opt-102", "name": "Earthrise View"}
+                ], "interaction_default_value": "opt-100"}
+            ]
+        },
+        {
+            "name": "DeepSea Explorer",
+            "version": "1.3.0",
+            "description": "A captivating underwater adventure in the depths of the ocean.",
+            "preview_image": "/Images/DesertSandDunes2.png",
+            "author": "OceanicStudios",
+            "id": "env-3",
+            "tag": "Film/TV",
+            "categories": [
+                {"id": "cat-30000", "title": "Coral Reefs", "description": "Vibrant ecosystems bustling with marine life."},
+                {"id": "cat-30001", "title": "Deep Sea", "description": "The mysterious depths, home to the unknown."},
+                {"id": "cat-30002", "title": "Shipwrecks", "description": "Explore the remnants of human history beneath the waves."}
+            ],
+            "interactions": [
+                {"id": "int-2000", "interaction_name": "Underwater Time of Day", "interaction_var_type": "float", "interaction_control_type": "slider", "interaction_min_value": 0.0, "interaction_max_value": 24.0, "interaction_default_value": 12.0},
+                {"id": "int-2001", "interaction_name": "Water Conditions", "interaction_var_type": "enum", "interaction_control_type": "drop_down", "interaction_options": [
+                    {"id": "opt-200", "name": "Clear"},
+                    {"id": "opt-201", "name": "Murky"},
+                    {"id": "opt-202", "name": "Bioluminescent"}
+                ], "interaction_default_value": "opt-200"}
+            ]
+        },
+        {
+            "name": "Desert Mirage",
+            "version": "1.1.0",
+            "description": "Experience the harsh beauty and solitude of the desert.",
+            "preview_image": "/Images/ElectricDreams.png",
+            "author": "DesertDreams",
+            "id": "env-4",
+            "tag": "Film/TV",
+            "categories": [
+                {"id": "cat-40000", "title": "Dunes", "description": "Endless sand dunes shifting with the wind."},
+                {"id": "cat-40001", "title": "Oasis", "description": "Rare havens of water and life."}
+            ],
+            "interactions": [
+                {"id": "int-3000", "interaction_name": "Desert Time of Day", "interaction_var_type": "float", "interaction_control_type": "slider", "interaction_min_value": 0.0, "interaction_max_value": 24.0, "interaction_default_value": 12.0},
+                {"id": "int-3001", "interaction_name": "Desert Climate", "interaction_var_type": "enum", "interaction_control_type": "drop_down", "interaction_options": [
+                    {"id": "opt-300", "name": "Clear"},
+                    {"id": "opt-301", "name": "Sandstorm"},
+                    {"id": "opt-302", "name": "Cloudy"}
+                ], "interaction_default_value": "opt-300"}
+            ]
+        },
+        {
+            "name": "Lakeside Retreat",
+            "version": "1.0.0",
+            "description": "A serene lakeside setting, perfect for relaxation and reflection.",
+            "preview_image": "/Images/KawaguchiInspired.png",
+            "author": "NatureEscapes",
+            "id": "env-5",
+            "tag": "Toys/Games",
+            "categories": [
+                {"id": "cat-50000", "title": "Morning Mist", "description": "The tranquil beauty of early mornings by the lake."},
+                {"id": "cat-50001", "title": "Sunset Glow", "description": "Stunning sunsets that paint the sky and water."}
+            ],
+            "interactions": [
+                {"id": "int-4000", "interaction_name": "Lakeside Time of Day", "interaction_var_type": "float", "interaction_control_type": "slider", "interaction_min_value": 0.0, "interaction_max_value": 24.0, "interaction_default_value": 12.0},
+                {"id": "int-4001", "interaction_name": "Lakeside Weather", "interaction_var_type": "enum", "interaction_control_type": "drop_down", "interaction_options": [
+                    {"id": "opt-400", "name": "Sunny"},
+                    {"id": "opt-401", "name": "Rainy"},
+                    {"id": "opt-402", "name": "Foggy"}
+                ], "interaction_default_value": "opt-400"}
+            ]
+        },
+        {
+            "name": "Meadow Bliss",
+            "version": "1.4.0",
+            "description": "Wander through a peaceful meadow, surrounded by flowers and the sounds of nature.",
+            "preview_image": "/Images/KawaguchiInspired2.png",
+            "author": "FloraFauna",
+            "id": "env-6",
+            "tag": "Film/TV",
+            "categories": [
+                {"id": "cat-60000", "title": "Wildflowers", "description": "A diverse array of colorful flowers in full bloom."},
+                {"id": "cat-60001", "title": "Butterflies", "description": "Delicate butterflies fluttering among the flowers."}
+            ],
+            "interactions": [
+                {"id": "int-5000", "interaction_name": "Meadow Time of Day", "interaction_var_type": "float", "interaction_control_type": "slider", "interaction_min_value": 0.0, "interaction_max_value": 24.0, "interaction_default_value": 12.0},
+                {"id": "int-5001", "interaction_name": "Meadow Weather", "interaction_var_type": "enum", "interaction_control_type": "drop_down", "interaction_options": [
+                    {"id": "opt-500", "name": "Sunny"},
+                    {"id": "opt-501", "name": "Cloudy"},
+                    {"id": "opt-502", "name": "Rainy"},
+                    {"id": "opt-503", "name": "Misty"}
+                ], "interaction_default_value": "opt-500"}
+            ]
+        },
+        {
+            "name": "Jungle Odyssey",
+            "version": "1.5.0",
+            "description": "A dense jungle teeming with life and adventure at every turn.",
+            "preview_image": "/Images/Lake.png",
+            "author": "AdventureWorlds",
+            "id": "env-7",
+            "tag": "Toys/Games",
+            "categories": [
+                {"id": "cat-70000", "title": "Rainforest Canopy", "description": "The lush, green canopy that houses an incredible diversity of life."},
+                {"id": "cat-70001", "title": "River Rapids", "description": "Fast-flowing rivers that carve through the jungle landscape."}
+            ],
+            "interactions": [
+                {"id": "int-6000", "interaction_name": "Jungle Time of Day", "interaction_var_type": "float", "interaction_control_type": "slider", "interaction_min_value": 0.0, "interaction_max_value": 24.0, "interaction_default_value": 12.0},
+                {"id": "int-6001", "interaction_name": "Jungle Weather", "interaction_var_type": "enum", "interaction_control_type": "drop_down", "interaction_options": [
+                    {"id": "opt-600", "name": "Sunny"},
+                    {"id": "opt-601", "name": "Rainy"},
+                    {"id": "opt-602", "name": "Foggy"},
+                    {"id": "opt-603", "name": "Stormy"}
+                ], "interaction_default_value": "opt-600"}
+            ]
+        },
+        {
+            "name": "Enchanted Brick Forest",
+            "version": "1.5.0",
+            "description": "A collection of Fantasy LEGO environments.",
+            "preview_image": "/Images/Masthead_Background.png",
+            "author": "Lego",
+            "id": "env-8",
+            "tag": "Toys/Games",
+            "categories": [
+                {"id": "cat-70000", "title": "Rainforest Canopy", "description": "The lush, green canopy that houses an incredible diversity of life."},
+                {"id": "cat-70001", "title": "River Rapids", "description": "Fast-flowing rivers that carve through the jungle landscape."}
+            ],
+            "interactions": [
+                {"id": "int-6000", "interaction_name": "Jungle Time of Day", "interaction_var_type": "float", "interaction_control_type": "slider", "interaction_min_value": 0.0, "interaction_max_value": 24.0, "interaction_default_value": 12.0},
+                {"id": "int-6001", "interaction_name": "Jungle Weather", "interaction_var_type": "enum", "interaction_control_type": "drop_down", "interaction_options": [
+                    {"id": "opt-600", "name": "Sunny"},
+                    {"id": "opt-601", "name": "Rainy"},
+                    {"id": "opt-602", "name": "Foggy"},
+                    {"id": "opt-603", "name": "Stormy"}
+                ], "interaction_default_value": "opt-600"}
+            ]
+        }
+    ]
+}

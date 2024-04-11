@@ -1,6 +1,6 @@
 import Checkbox from "./Checkbox";
 import Playlist from "./Playlist";
-import Slider from "./slider";
+import CustomSlider from "./CustomSlider";
 import Joystick from "./Joystick";
 import mrsvSocket from "./SocketConnection";
 import { useEffect } from "react";
@@ -31,7 +31,7 @@ const Controller = () => {
                     <div className="controller-panel-sliders flex">
                         <div className="sliders-volume">
                             <img className="sliders-icon" src="/Icons/Volume_Icon.svg" alt="" />
-                            <Slider colors={"green"} hasMarks={false} sliderValue={getData}/>
+                            <CustomSlider colors={"#42D2A7"} hasMarks={false} sliderValue={getData}/>
                         </div>
                         <div className="sliders-weather">
                             <div className="flex">
@@ -40,13 +40,13 @@ const Controller = () => {
                                 <div>_____________</div>
                             </div>
                             <div className="flex">
-                                <Slider colors={"blue"} markColors={"white"} hasMarks={true} min={0} max={4} step={1} /* sliderValue={socketControls.SetWeatherType} *//>
-                                <Slider colors={"white"} hasMarks={false} /* sliderValue={socketControls.SetWeatherIntensity} */ />
+                                <CustomSlider colors={"#4568FB"} markColors={"#FFFFFF"} hasMarks={true} min={0} max={4} step={1} /* sliderValue={socketControls.SetWeatherType} *//>
+                                <CustomSlider colors={"#FFFFFF"} hasMarks={false} /* sliderValue={socketControls.SetWeatherIntensity} */ />
                             </div>
                         </div>
                         <div className="sliders-time">
                             <img className="sliders-icon" src="/Icons/Time_Icon.svg" alt="" />
-                            <Slider colors={"yellow"} markColors={"black"} hasMarks={true} min={0} max={3} step={1} /* sliderValue={socketControls.SetTimeOfDay} */ />
+                            <CustomSlider colors={"#FFD72F"} markColors={"#000000"}  /* sliderValue={socketControls.SetTimeOfDay} */ />
                         </div>
                     </div>
                     <div className="controller-panel-view">

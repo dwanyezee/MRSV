@@ -366,6 +366,8 @@ p {
 }
 
 .navbar-logo {
+    width: 70px;
+    height: 50px;
     position: absolute;
     background: none;
     left: 50%;
@@ -373,12 +375,16 @@ p {
     z-index: 5;
 }
 
+.navbar-logo img {
+    width: 100%;
+}
+
 .navbar-profile {
     position: absolute;
     background: none;
     right: 15px;
     top: 25px;
-    width: 70px;    
+    width: 80px;    
     border-radius: 50%;
     z-index: 5;
 }
@@ -484,12 +490,28 @@ p {
 
 
 .library-cardlist {
+    position: relative;
+    width: 100%;
+    float: right;
+    height: auto;
     display: flex;
-    justify-content: center;
     align-items: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+    background-color: #000000;
 }
+
+
+.library-cardlist > div:first-child {
+    margin-left: 50px;
+}
+
+.library-cardlist > div:last-child {
+    margin-right: 50px;
+}
+
 
 .library-list h1 {
     margin: 100px 0 0 5%;
@@ -497,11 +519,15 @@ p {
 }
 
 .card {
+    display: flex;
+    overflow: hidden;
     box-shadow: 0 0 4px 0 rgba(255,255,255,0.2);
     transition: 0.2s;
-    width: 350px;
-    height: 400px;
-    margin: 25px 8px 25px 8px;
+    min-width: 300px;
+    min-height: 350px;
+    max-width: 300px;
+    max-height: 350px;
+    margin: 25px 8px 20px 8px;
     border-radius: 10px;
     background: #252629;   
 }
@@ -800,6 +826,93 @@ p {
     margin: 0 6px;
 }
 
+/* Playlist Create */
+.playlist-create {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.background-blur {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0,0,0,0.3);
+}
+
+.playlist-create-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 400px;
+    height: 860px;
+    background: #252629;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px #202020;
+}
+
+.playlist-create-title {
+    margin: 15px 30px;
+}
+
+.playlist-create-thumbnail {
+    width: 340px;
+    height: 340px;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.playlist-create-form input, .playlist-create-form textarea {
+    width: 90%;
+    padding: 15px 10px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #131315;
+    font-size: medium;
+}
+
+.playlist-create-form textarea {
+    height: 180px;
+}
+
+.playlist-create-form-btns {
+    width: 90%;
+    height: 70px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.playlist-create-form-btns .green-btn {
+    width: 60%;
+    height: 100%;
+    margin-right: 5px;
+    
+}
+
+button:disabled {
+    filter: brightness(60%);
+}
+
+.playlist-create-form-btns .red-btn {
+    width: 35%;
+    height: 100%;
+} 
 
 /* Controller Menu */
 

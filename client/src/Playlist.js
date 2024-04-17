@@ -2,6 +2,7 @@ import { useState } from "react";
 import Heart from "./Heart";
 import AdditionalOptions from "./AdditionalOptions";
 import PlaylistOptions from "./PlaylistOptions";
+import PlaylistCreate from "./PlaylistCreate";
 
 const Playlist = () => {
     const [playlists, setPlaylists] = useState([
@@ -15,10 +16,13 @@ const Playlist = () => {
         { imageThumbnailLink: "https://picsum.photos/200?random=8", playlistName: "Emerald Range", type: "Toys/Games", authorName: "Pokemon Company", likes: 3235, id: 8 },
     ])
 
+    const [createPlaylistActive, setCreatePlaylistActive] = useState(false);
+
     const [optionActiveIndex, setOptionActiveIndex] = useState(0);
 
     return ( 
     <div className="playlist">
+        { createPlaylistActive && <PlaylistCreate playlistCreate={() => setCreatePlaylistActive(false)} /> }
         {playlists.map((playlist, currentIndex) => (
             <div className="playlist-card" key={ playlist.id }>
                 <div className="playlist-card-details">
@@ -38,7 +42,7 @@ const Playlist = () => {
                         <Heart size="40px" />
                     </div>
                     <div className="playlist-card-btns-others">
-                        <PlaylistOptions showOptions={() => setOptionActiveIndex( optionActiveIndex === (currentIndex + 1) ? 0 : currentIndex + 1 )} isActive={optionActiveIndex === currentIndex + 1} />
+                        <PlaylistOptions showOptions={() => setOptionActiveIndex( optionActiveIndex === (currentIndex + 1) ? 0 : currentIndex + 1 )} isActive={optionActiveIndex === currentIndex + 1} playlistCreate={() => setCreatePlaylistActive(true)}/>
                         <AdditionalOptions showOptions={() => setOptionActiveIndex( optionActiveIndex === (-currentIndex - 1) ? 0 : -currentIndex - 1 )} isActive={optionActiveIndex === -currentIndex - 1} />
                     </div>
                 </div>        

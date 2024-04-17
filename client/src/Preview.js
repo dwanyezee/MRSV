@@ -5,10 +5,11 @@ import useFetch from "./useFetch";
 
 const Preview = () => {
     const { id } = useParams();
-    const { data:environment , isPending, error } = useFetch("http://localhost:8000/environments/" + id)
+    const { data:environment } = useFetch("http://localhost:8000/environments/" + id);
 
     return ( 
         <div className="preview">
+            
             <div className="preview-cover">
                 <img className="preview-cover-background" src={environment && environment.preview_image} alt="" />
                 <div className="preview-cover-container">

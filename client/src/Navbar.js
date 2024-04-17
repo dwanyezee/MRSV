@@ -20,7 +20,7 @@ const Navbar = () => {
         {location.pathname !== "/settings" &&
         <Link to="/">
             <button className="navbar-logo">
-                <img src="Icons/MRSVLogo_Icon.svg" alt="" />
+                <img src="/Icons/MRSVLogo_Icon.svg" alt="" />
             </button>
         </Link>
         }

@@ -5,7 +5,7 @@ import PlaylistOptions from "./PlaylistOptions";
 import PlaylistCreate from "./PlaylistCreate";
 
 const Playlist = () => {
-    const [playlists, setPlaylists] = useState([
+    const [playlists] = useState([
         { imageThumbnailLink: "https://picsum.photos/200?random=1", playlistName: "Emerald Range", type: "Toys/Games", authorName: "Pokemon Company", likes: 242335, id: 1 },
         { imageThumbnailLink: "https://picsum.photos/200?random=2", playlistName: "Emerald Range", type: "Toys/Games", authorName: "Pokemon Company", likes: 9013290, id: 2 },
         { imageThumbnailLink: "https://picsum.photos/200?random=3", playlistName: "Emerald Range", type: "Toys/Games", authorName: "Pokemon Company", likes: 123, id: 3 },

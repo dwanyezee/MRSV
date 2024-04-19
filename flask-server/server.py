@@ -1,4 +1,5 @@
 import os
+import uuid
 from flask import Flask, url_for, json, request
 from flask_cors import CORS
 
@@ -15,7 +16,7 @@ def LoadJson():
 def WriteJson(location, new_data):
     with open(json_url,"r+") as file:
         file_data = json.load(file)
-        new_data["id"] = len(LoadJson()[location]) + 1
+        new_data["id"] = uuid.uuid4()
         file_data[location].append(new_data)
         file.seek(0)
         json.dump(file_data, file, indent = 4)

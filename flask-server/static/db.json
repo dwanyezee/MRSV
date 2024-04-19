@@ -482,28 +482,36 @@
             "title": "playlist_title"
         },
         {
-            "category": "awdawffawwds",
-            "description": "awd wa ed awdawdadawda ",
+            "category": "Sci-fi",
+            "description": "Explore a world beyond the stars",
             "environments_id": [],
             "id": 2,
             "preview_image": "https://picsum.photos/500?random",
-            "title": "wdawdawd"
+            "title": "The Future is Space"
         },
         {
-            "category": "adwdawawd d",
-            "description": "dwadawsddawdwwaas wsdadass",
+            "category": "Games",
+            "description": "Games are fun!",
             "environments_id": [],
-            "id": 3,
+            "id": "a297f2cb-8459-4e42-802d-8ffd47eba056",
             "preview_image": "https://picsum.photos/500?random",
-            "title": "wdwd"
+            "title": "Playmade"
         },
         {
-            "category": "adwdawawd dd sad s",
-            "description": "dwadawsddawdwwaas wsdadasda sds sad ss",
+            "category": "dwaawdawd",
+            "description": "adwawdws sd asaasdd wads sa assaasas",
             "environments_id": [],
-            "id": 4,
+            "id": "b23c55ff-c29d-4c5e-89e9-56f442bd34f2",
             "preview_image": "https://picsum.photos/500?random",
-            "title": "wdwdd awdas dds"
+            "title": "Amadwadwad "
+        },
+        {
+            "category": "awdad  sdassa",
+            "description": "asdadassaaawdw da",
+            "environments_id": [],
+            "id": "8707e7b1-126f-4619-96c9-2be44094a5a5",
+            "preview_image": "https://picsum.photos/500?random",
+            "title": "wadawddaw"
         }
     ]
 }

@@ -1,10 +1,15 @@
 import { useState } from "react";
+import { UseNotification } from "./NotificationProvider"
+import { useNavigate } from "react-router-dom";
 
 const PlaylistCreate = (props) => {
     const [title, setTitle] = useState('');
     const [category, setCategory] = useState('');
     const [description, setDescription] = useState('');
     const [isPending, setIsPending] = useState(false);
+    const navigate = useNavigate();
+
+    const dispatch = UseNotification();
 
     const HandleSubmit = (e) => {
         e.preventDefault();
@@ -16,10 +21,25 @@ const PlaylistCreate = (props) => {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(playlist)
+
         }).then(() => {
             console.log("New Playlist Added");
             setIsPending(false);
             props.playlistCreate();
+            dispatch({
+                type: "SUCCESS",
+                message: "Playlist Successfully Created!"
+            })
+            navigate("/");
+
+        }).catch((err) => {
+            setIsPending(false);
+            console.error(err.message);
+            dispatch({
+                type: "ERROR",
+                message: "There was an error in processing your request - " + err.message
+            })
+            
         });
     }
 

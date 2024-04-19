@@ -916,10 +916,52 @@ button:disabled {
 
 /* Controller Menu */
 
+@media screen and (max-width: 900px) { /* General portrait view */ 
+    .Controller .preview-cover-background {
+        height: 800px;
+    }
+
+    .controller-panel {
+        display: block !important;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .controller-main-name {
+        left: 50% !important;
+        transform: translate(-50%, 0);
+    }
+
+    .controller-main-content {
+        width: 100% !important;
+        justify-content: space-around !important;
+    }
+    
+    .controller-panel-sliders {
+        width: 100% !important;
+        justify-content:center !important;
+    }
+
+    .controller-panel-view {
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.Controller {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
 .controller-main-name {
     position: absolute;
-    top: 80px;
-    left: 100px;
+    text-wrap: nowrap;
+    top: 100px;
+    left: 10%;
 }
 
 .controller-main-content {
@@ -942,6 +984,11 @@ button:disabled {
 .controller-panel-sliders {
     width: 45%;
     justify-content: space-between;
+}
+
+.controller-panel-view {
+    position: relative;
+    width: 280px;
 }
 
 .sliders-icon {
@@ -1090,7 +1137,7 @@ button:disabled {
     color: #6b6c6e;
 }
 
-/* Loading Screen */
+/* Loading Screens */
 
 .loading {
     animation-name: load;
@@ -1103,4 +1150,83 @@ button:disabled {
 @keyframes load {
     from {background-color: #1a1919;}
     to {background-color: #252629;}
+}
+
+/* Notification Panel */
+.notification-wrapper {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+.notification-item {
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    background: #2C2D30;
+    box-shadow: 0 0 8px rgba(0,0,0,0.8);
+    margin-top: 8px;
+    animation: SlideLeft 0.3s;
+    animation-fill-mode: forwards;
+    width: 340px;
+}
+
+.notification-item p {
+    position: relative;
+    padding: 8px 5px; 
+    margin-left: 6px;
+    font-weight: normal;
+    font-size: medium;
+}
+
+.notification-state {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+}
+
+.notification-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.notification-item.success .notification-state {
+    background-color: #00BB72;
+}
+
+.notification-item.error .notification-state {
+    background-color: tomato;
+}
+
+.notification-item.exit {
+    animation: SlideRight 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes SlideLeft {
+    0% {
+        margin-left: 120%;
+    }
+
+    100% {
+        margin-left: 0%;
+    }
+}
+
+@keyframes SlideRight {
+    0% {
+        margin-left: 0%;
+    }
+
+    100% {
+        margin-left: 120%;
+    }
 }

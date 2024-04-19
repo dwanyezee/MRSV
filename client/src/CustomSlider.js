@@ -5,9 +5,9 @@ import { ClassNames } from "@emotion/react";
 
 const CustomSlider = (props) => {
     const colors = props.colors;
+    const defaultValue = props.defaultValue;
     const min = props.min;
     const max = props.max;
-    const hasMarks = props.hasMarks;
     const step = props.step;
 
     var currentIndex;
@@ -29,9 +29,10 @@ const CustomSlider = (props) => {
         max={max}
         orientation="vertical"
         marks={marks}
+        defaultValue={defaultValue}
         onChange={typeof props.sliderValue !== "undefined" ? (e) => props.sliderValue(e.target.value) : null}
         sx={{
-            width: "80px",
+            width: "70px",
             height: "250px",
             background: "rgba(37,38,41,0.6)",
             borderRadius: "5px",

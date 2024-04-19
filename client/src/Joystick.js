@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactNipple from "react-nipple";
 
 
-const Joystick = () => {
+const Joystick = (props) => {
   // state
   const [data, setData] = useState();
 
@@ -11,48 +11,77 @@ const Joystick = () => {
     buttons: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   });
 
+  const directionVector = useRef({
+    x: 0,
+    y: 0
+  });
+
+  const translateVector = useRef({
+    x: 0,
+    y: 0
+  });
+
+  const [joystickActive, setJoystickActive] = useState(false);
+  
+  function clamp(number, min, max) {
+    return Math.max(min, Math.min(number, max));
+  }
+
+
+
   useEffect(() => {
-   // moveRobot({ axes: state.axes, buttons: state.buttons });
-   console.log(state.axes);
+    console.log(joystickActive);
+    if (joystickActive)
+    {
+      const FixedIntervalUpdate = setInterval(() => {
+        translateVector.current.x = translateVector.current.x + directionVector.current.x;
+        translateVector.current.y = clamp(translateVector.current.y + directionVector.current.y, -90, 90);
 
+        props.xValue(translateVector.current.x);
+        props.yValue(translateVector.current.y);
+      }, 20); // Updates every 20ms
 
-  }, [state]);
+      return () => {
+        directionVector.current.x = 0;
+        directionVector.current.y = 0;
+        clearInterval(FixedIntervalUpdate);
+      };
+    }
+  }, [joystickActive]);
 
   // functions
   const handleJoystickStart = (evt, data) => {
     setData(data);
+    setJoystickActive(true);
   };
 
   const handleJoystickEnd = (evt, data) => {
-
     setData(data);
-    
     setState({
       axes: [0, 0, 0, 0, 0, 0]
     });
-
+    setJoystickActive(false);
   };
 
   const handleJoystickMove = (evt, data) => {
     setData(data);
+    let y_direction = Math.sin(data.angle.radian);
+    let x_direction = -Math.cos(data.angle.radian);
+
+    directionVector.current.x = -x_direction * (data.distance / 80);
+    directionVector.current.y = y_direction * (data.distance / 80);
+
+    //console.log("Direction x: "+ directionVector.x +"  y: "+ directionVector.y );
+
+    //console.log(data);
   };
 
   const handleJoystickDir = (evt, data) => {
     setData(data);
-/*
-    manager.on('move', function (event, nipple) {*/
- // let max_linear = 5.0; // m/s
-  //let max_angular = 2.0; // rad/s
-  let max_distance = 75.0; // pixels;
-  console.log("Senas ", data.distance);
-  let y_direction = Math.sin(data.angle.radian);// *  data.distance/max_distance;
-  let x_direction = -Math.cos(data.angle.radian);//  * data.distance/max_distance;
-  let x_inverte = Math.cos(data.angle.radian);
-  
-  if(y_direction <= 0.2 || y_direction <= -0.2){
-      y_direction = 0;
-  }
-
+  //let max_distance = 75.0; // pixels;
+  // let y_direction = Math.sin(data.angle.radian);
+  // let x_direction = -Math.cos(data.angle.radian);
+  //let x_inverte = Math.cos(data.angle.radian);
 
 //});
     
@@ -71,12 +100,12 @@ const Joystick = () => {
       axes: [x, y, 0, 0, 0, 0],
       buttons: [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
     }); 
-        console.log("Direction x: "+ x_direction +"  y: "+ y_direction );
-        console.log("Exos x: "+ x +"  y: "+ y )
-        console.log("invertido x: ", x_inverte)
-    // console.log(" valor diustancia  "+ data.angle.radian);
-    //console.log(" valor linear_speed  "+ linear_speed);
-    //console.log(" valor angular_speed  "+  angular_speed);
+        // console.log("Direction x: "+ x_direction +"  y: "+ y_direction );
+        // console.log("Exos x: "+ x +"  y: "+ y )
+        // console.log("invertido x: ", x_inverte)
+        // console.log(" valor diustancia  "+ data.angle.radian);
+        // console.log(" valor linear_speed  "+ linear_speed);
+        // console.log(" valor angular_speed  "+  angular_speed);
   };
 
   const handleJoystickPlain = (evt, data) => {
@@ -102,7 +131,7 @@ const Joystick = () => {
             options={{
                 mode: "static",
                 position: { top: "50%", left: "50%" },
-                size: 150,
+                size: 160,
                 treshold: 0.1,
                 color: "white"
             }}

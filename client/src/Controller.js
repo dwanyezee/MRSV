@@ -10,11 +10,11 @@ const Controller = () => {
         console.log(val);
     }
 
-    /* var socketControls = new mrsvSocket(); */
+    var socketControls = new mrsvSocket();
 
-    // useEffect(() => {
-    //     socketControls.Initialize();
-    // }, []);
+    useEffect(() => {
+        socketControls.Initialize();
+    }, []);
 
     return ( 
         <div className="Controller">
@@ -31,7 +31,7 @@ const Controller = () => {
                     <div className="controller-panel-sliders flex">
                         <div className="sliders-volume">
                             <img className="sliders-icon" src="/Icons/Volume_Icon.svg" alt="" />
-                            <CustomSlider colors={"#42D2A7"} hasMarks={false} sliderValue={getData}/>
+                            <CustomSlider colors={"#42D2A7"} sliderValue={getData} defaultValue={50} />
                         </div>
                         <div className="sliders-weather">
                             <div className="flex">
@@ -40,20 +40,20 @@ const Controller = () => {
                                 <div>_____________</div>
                             </div>
                             <div className="flex">
-                                <CustomSlider colors={"#4568FB"} markColors={"#FFFFFF"} hasMarks={true} min={0} max={4} step={1} /* sliderValue={socketControls.SetWeatherType} *//>
-                                <CustomSlider colors={"#FFFFFF"} hasMarks={false} /* sliderValue={socketControls.SetWeatherIntensity} */ />
+                                <CustomSlider colors={"#4568FB"} markColors={"#FFFFFF"} min={0} max={4} step={1} sliderValue={socketControls.SetWeatherType} defaultValue={2}/>
+                                <CustomSlider colors={"#FFFFFF"} sliderValue={socketControls.SetWeatherIntensity} defaultValue={50} />
                             </div>
                         </div>
                         <div className="sliders-time">
                             <img className="sliders-icon" src="/Icons/Time_Icon.svg" alt="" />
-                            <CustomSlider colors={"#FFD72F"} markColors={"#000000"}  /* sliderValue={socketControls.SetTimeOfDay} */ />
+                            <CustomSlider colors={"#FFD72F"} markColors={"#000000"}  sliderValue={socketControls.SetTimeOfDay} defaultValue={50} />
                         </div>
                     </div>
                     <div className="controller-panel-view">
                         <div className="flex">
-                            <div>___________________</div>
+                            <div>_______________</div>
                             <img className="sliders-icon" src="/Icons/CameraView_Icon.svg" alt="" />
-                            <div>___________________</div>
+                            <div>_______________</div>
                         </div>
                         <div className="flex">
                             <div className="controller-panel-view-btns grid">
@@ -61,7 +61,7 @@ const Controller = () => {
                                 <Checkbox icon={"/Icons/Pan_Icon.svg"} iconScale={"60%"} />
                             </div>
                             <div className="controller-panel-view-joystick">
-                                <Joystick />
+                                <Joystick xValue={socketControls.SetCameraYaw} yValue={socketControls.SetCameraPitch}/>
                             </div>    
                         </div>
                     </div>    

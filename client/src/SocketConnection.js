@@ -57,7 +57,7 @@ export default class mrsvSocket {
 
     SetCameraYaw(val) {
         socket.emit('camera_yaw_changed', {
-            data: val * 0.1
+            data: val
         });
 
         socket.on('camera_yaw_updated', function(msg) {
@@ -71,7 +71,7 @@ export default class mrsvSocket {
 
     SetCameraPitch(val) {
         socket.emit('camera_pitch_changed', {
-            data: val * 0.1
+            data: val
         });
 
         socket.on('camera_pitch_updated', function(msg) {

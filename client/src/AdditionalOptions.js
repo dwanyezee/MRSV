@@ -1,10 +1,7 @@
-import { useState } from "react";
-import Checkbox from "./Checkbox";
-
 const AdditionalOptions = (props) => {
     function OptionMenuPanel() {
         return (
-            <div className="additonal-options-menu">
+            <div className="additional-options-menu">
                 <h3>Additional Options</h3>
                 <div className="additional-options-menu-btns">
                     <button>

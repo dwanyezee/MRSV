@@ -741,7 +741,7 @@ p {
     filter: invert(79%) sepia(49%) saturate(2553%) hue-rotate(358deg) brightness(390%) contrast(108%);
 }
 
-.additonal-options-menu {
+.additional-options-menu {
     position: absolute;
     right: 5%;
     background-color: #252629;
@@ -752,7 +752,7 @@ p {
     text-align: center;
 }
 
-.additonal-options-menu h3 {
+.additional-options-menu h3 {
     font-size: larger;
 }
 

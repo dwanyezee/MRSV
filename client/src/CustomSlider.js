@@ -1,6 +1,4 @@
-import ReactSlider from "react-slider";
 import { Slider } from '@mui/material';
-import { ClassNames } from "@emotion/react";
 
 
 const CustomSlider = (props) => {
